@@ -14,8 +14,32 @@
 <body>
     <main>
         <header>
-            <h1 class="text-center info">Daily Life Plan</h1>
+            <h1 class="text-center info mt-3">Daily Life Plan</h1>
         </header>
+        <section class="container mt-3">
+                <div class="row">
+                  <div class="col">
+                    <img class="img-fluid daily-plan me-3" src="image/plan.jpg" alt="">
+                  </div>
+                  <div class="col">
+                    <h4 class="mb-3 fw-bold">Income</h4>
+                    <p> income:  <input  id="income" type="text"></p>
+                    <h4 class="fw-bold">Expenses</h4>
+                    <p> Food:  <input id="food" type="text"></p>
+                    <p> Rent:  <input id="rent" type="text"></p>
+                    <p> Clothes:  <input id="clothes" type="text"></p>
+
+                    <button type="button" class="btn btn-info" id="calculate-btn">Calculate</button>
+                    <p class="fw-bold">Total Expenses: <span id="total-expenses">5500</span></p>
+                    <p class="fw-bold">Balance: <span id="balance">4500</span></p>
+                    <p>Save: <input id="savings" type="text"> %  <button id="save-btn" type="button" class="btn btn-info">Save</button>
+
+                    <p class="fw-bold">Saving Amount: <span id="saving-amount">2000</span></p>
+                    <p class="fw-bold">Remaining Balance: <span id="remaining-balance">2500</span></p>
+                  </div>
+                </div>
+            
+        </section>
     </main>
     
 
