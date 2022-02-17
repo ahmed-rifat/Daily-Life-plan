@@ -2,7 +2,25 @@
 
 document.getElementById('calculate-btn').addEventListener('click', function(){
 
- const totalIncome = elementsId('income');
+  balanceOutput();
+ 
+})
+document.getElementById('save-btn').addEventListener('click', function(){
+    
+remainingBalanceOutput()
+
+})
+
+
+
+
+function elementsId( itemId){
+    const itemPrice = document.getElementById(itemId);
+        return itemPrice;
+}
+
+function balanceOutput(){
+    const totalIncome = elementsId('income');
  const foodPrice = elementsId('food');
  const rentPrice = elementsId('rent');
  const colthesPrice = elementsId('clothes');
@@ -13,16 +31,10 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
  totalExpenses.innerText = finalExpenses;
  let finalBalance = parseFloat(totalIncome.value)- finalExpenses;
  totalBalance.innerText = finalBalance;
- 
-})
+ return finalBalance;
 
-function elementsId( itemId){
-    const itemPrice = document.getElementById(itemId);
-        return itemPrice;
 }
-
-document.getElementById('save-btn').addEventListener('click', function(){
-    
+function remainingBalanceOutput (){
     const savings = elementsId('savings');
     let totalBalance = elementsId('balance');
     const remainingBalance = elementsId('remaining-balance');
@@ -32,9 +44,7 @@ document.getElementById('save-btn').addEventListener('click', function(){
     savingsMoney.innerText = savingsAmount;
     const totalRemainigBalance = parseFloat(totalBalance.innerText) - parseFloat(savingsMoney.innerText);
     remainingBalance.innerText = totalRemainigBalance;
-    
-    
+        return totalRemainigBalance;
 
-    
-    // console.log(savingsAmount);
-})
+}
+
