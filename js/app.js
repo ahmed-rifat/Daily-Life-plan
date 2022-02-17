@@ -1,11 +1,13 @@
 
 
 document.getElementById('calculate-btn').addEventListener('click', function(){
-
+  
   balanceOutput();
+
  
 })
 document.getElementById('save-btn').addEventListener('click', function(){
+ 
     
 remainingBalanceOutput()
 
@@ -35,13 +37,19 @@ function balanceOutput(){
 
 }
 function remainingBalanceOutput (){
+    const totalIncome = elementsId('income');
+
     const savings = elementsId('savings');
     let totalBalance = elementsId('balance');
     const remainingBalance = elementsId('remaining-balance');
     const savingsMoney = elementsId('saving-amount');
     
-    const savingsAmount = (parseFloat(totalBalance.innerText) * parseFloat(savings.value))/100;
+    const savingsAmount = (parseFloat(totalIncome.value) * parseFloat(savings.value))/100;
+    
     savingsMoney.innerText = savingsAmount;
+    if(savingsMoney.innerText > totalBalance.innerText){
+        alert ("savings can't be higher than Balance");
+     }
     const totalRemainigBalance = parseFloat(totalBalance.innerText) - parseFloat(savingsMoney.innerText);
     remainingBalance.innerText = totalRemainigBalance;
         return totalRemainigBalance;
