@@ -29,13 +29,21 @@ function balanceOutput(){
  const totalExpenses = elementsId('total-expenses');
  let totalBalance = elementsId('balance');
  
+ if (isNaN(totalIncome.value)) {
+    window.alert("You have entered not a number");
+    return false;
+  } 
  const finalExpenses = parseFloat(foodPrice.value) + parseFloat(rentPrice.value)+ parseFloat (colthesPrice.value);
  totalExpenses.innerText = finalExpenses;
  let finalBalance = parseFloat(totalIncome.value)- finalExpenses;
  totalBalance.innerText = finalBalance;
  return finalBalance;
 
+
 }
+
+
+
 function remainingBalanceOutput (){
     const totalIncome = elementsId('income');
 
@@ -43,16 +51,28 @@ function remainingBalanceOutput (){
     let totalBalance = elementsId('balance');
     const remainingBalance = elementsId('remaining-balance');
     const savingsMoney = elementsId('saving-amount');
-    
+
+    if (isNaN(savings.value)) {
+        window.alert("please enetered a number");
+        return false;
+      } else{
     const savingsAmount = (parseFloat(totalIncome.value) * parseFloat(savings.value))/100;
     
-    savingsMoney.innerText = savingsAmount;
-    if(savingsMoney.innerText > totalBalance.innerText){
-        alert ("savings can't be higher than Balance");
-     }
-    const totalRemainigBalance = parseFloat(totalBalance.innerText) - parseFloat(savingsMoney.innerText);
-    remainingBalance.innerText = totalRemainigBalance;
-        return totalRemainigBalance;
-
+    
+     // Error notification show
+    if(savingsAmount > totalBalance.innerText){
+       alert ("savings can't be higher than Balance");
+    } else{
+        savingsMoney.innerText = savingsAmount;
+        const totalRemainigBalance = parseFloat(totalBalance.innerText) - parseFloat(savingsMoney.innerText);
+        remainingBalance.innerText = totalRemainigBalance;
+            return totalRemainigBalance;
+    }
 }
+}  
+     
+
+   
+
+
 
