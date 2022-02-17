@@ -2,12 +2,12 @@
 
 document.getElementById('calculate-btn').addEventListener('click', function(){
 
- const totalIncome = document.getElementById('income');
- const foodPrice = document.getElementById('food');
- const rentPrice = document.getElementById('rent');
- const colthesPrice = document.getElementById('clothes');
- const totalExpenses = document.getElementById('total-expenses');
- let totalBalance = document.getElementById('balance');
+ const totalIncome = elementsId('income');
+ const foodPrice = elementsId('food');
+ const rentPrice = elementsId('rent');
+ const colthesPrice = elementsId('clothes');
+ const totalExpenses = elementsId('total-expenses');
+ let totalBalance = elementsId('balance');
  
  const finalExpenses = parseFloat(foodPrice.value) + parseFloat(rentPrice.value)+ parseFloat (colthesPrice.value);
  totalExpenses.innerText = finalExpenses;
@@ -16,12 +16,17 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
  
 })
 
+function elementsId( itemId){
+    const itemPrice = document.getElementById(itemId);
+        return itemPrice;
+}
+
 document.getElementById('save-btn').addEventListener('click', function(){
     
-    const savings = document.getElementById('savings');
-    let totalBalance = document.getElementById('balance');
-    const remainingBalance = document.getElementById('remaining-balance');
-    const savingsMoney = document.getElementById('saving-amount');
+    const savings = elementsId('savings');
+    let totalBalance = elementsId('balance');
+    const remainingBalance = elementsId('remaining-balance');
+    const savingsMoney = elementsId('saving-amount');
     
     const savingsAmount = (parseFloat(totalBalance.innerText) * parseFloat(savings.value))/100;
     savingsMoney.innerText = savingsAmount;
