@@ -30,19 +30,32 @@ function balanceOutput(){
  let totalBalance = elementsId('balance');
  
  if (isNaN(totalIncome.value)) {
-    window.alert("You have entered not a number");
+    window.alert("please entered income value a number");
     return false;
-  } 
- const finalExpenses = parseFloat(foodPrice.value) + parseFloat(rentPrice.value)+ parseFloat (colthesPrice.value);
- totalExpenses.innerText = finalExpenses;
- let finalBalance = parseFloat(totalIncome.value)- finalExpenses;
- totalBalance.innerText = finalBalance;
- return finalBalance;
-
-
-}
-
-
+  }
+  else if (isNaN(foodPrice.value)) {
+    window.alert("please entered food value a number");
+    return false;
+  }
+   else if (isNaN(rentPrice.value)) {
+    window.alert("please entered rent value a number");
+    return false;
+  }
+   else if (isNaN(colthesPrice.value)) {
+    window.alert("please entered clothes value a number");
+    return false;
+  }
+  else{
+    const finalExpenses = parseFloat(foodPrice.value) + parseFloat(rentPrice.value)+ parseFloat (colthesPrice.value);
+    totalExpenses.innerText = finalExpenses;
+    let finalBalance = parseFloat(totalIncome.value)- finalExpenses;
+    totalBalance.innerText = finalBalance;
+    return finalBalance; 
+  }
+ 
+    
+ 
+ }
 
 function remainingBalanceOutput (){
     const totalIncome = elementsId('income');
@@ -52,16 +65,17 @@ function remainingBalanceOutput (){
     const remainingBalance = elementsId('remaining-balance');
     const savingsMoney = elementsId('saving-amount');
 
-    if (isNaN(savings.value)) {
-        window.alert("please enetered a number");
+    if(isNaN(savings.value)){
+        window.alert('please entered save value a number');
         return false;
-      } else{
+    } else{
+
     const savingsAmount = (parseFloat(totalIncome.value) * parseFloat(savings.value))/100;
     
     
      // Error notification show
     if(savingsAmount > totalBalance.innerText){
-       alert ("savings can't be higher than Balance");
+      window.alert ("savings can't be higher than Balance");
     } else{
         savingsMoney.innerText = savingsAmount;
         const totalRemainigBalance = parseFloat(totalBalance.innerText) - parseFloat(savingsMoney.innerText);
@@ -69,7 +83,8 @@ function remainingBalanceOutput (){
             return totalRemainigBalance;
     }
 }
-}  
+}
+  
      
 
    
