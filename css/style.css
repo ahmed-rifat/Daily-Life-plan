@@ -1,8 +1,117 @@
 h1{
     color: #31A5AC;
+    margin-bottom: 38px;
 }
 
+
 .daily-plan{
-height: 490px;
+height: 715px;
 width: 705px;
 }
+.plan-container{
+    background-color: #F8F8F8;
+}
+.income-text{
+    
+    margin-left: 262px;
+    margin-top: 58px;
+    
+}
+.income-value-text{
+    margin-left: 144px;
+    margin-top: 30px;
+}
+.expenses-text{
+    margin-left: 251px;
+    margin-top: 27px;
+}
+.food-text{
+    margin-top: 25px;
+    margin-left: 144px;
+}
+.rent-text{
+    margin-left: 148px;
+    margin-top: 20px;
+}
+.clothes-text{
+    margin-left: 143px;
+    margin-top: 20px;
+}
+#calculate-btn{
+    margin-left: 199px;
+    margin-top: 25px;
+    height: 51px;
+    width: 159px;
+    color: white;
+}
+.save-text{
+    margin-left: 95px;
+}
+#save-btn{
+    width: 173px;
+    height: 44px;
+}
+#savings{
+    width: 132px;
+    height: 44px;
+}
+
+
+
+/* responsive website */
+
+/* for mobile */
+@media only screen and (max-width: 687px) {
+    
+    .plan-calculator{
+        display: flex;
+        flex-direction: column;
+    }
+    .income-text{
+    
+        margin-left: 130px;
+        margin-top: 58px;
+        
+    }
+    .income-value-text{
+        margin-left: 54px;
+        margin-top: 30px;
+    }
+    .expenses-text{
+        margin-left: 129px;
+        margin-top: 27px;
+    }
+    .food-text{
+        margin-top: 25px;
+        margin-left: 55px;
+    }
+    .rent-text{
+        margin-left: 60px;
+        margin-top: 20px;
+    }
+    .clothes-text{
+        margin-left: 54px;
+        margin-top: 20px;
+    }
+    #calculate-btn{
+        margin-left: 127px;
+        margin-top: 25px;
+        height: 51px;
+        width: 159px;
+        color: white;
+    }
+    .save-text{
+        margin-left: 62px;
+    }
+    #save-btn{
+        margin-top: 13px;
+        margin-left: 65px;
+        width: 173px;
+        height: 44px;
+    }
+    #savings{
+        width: 132px;
+        height: 44px;
+    }
+    }
+  
